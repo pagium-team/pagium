@@ -1,0 +1,27 @@
+{
+  "name": "pagium",
+  "version": "0.0.1",
+  "description": "\"a kernel for the block system platform\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pagium-team/pagium.git"
+  },
+  "keywords": [
+    "block",
+    "nodejs",
+    "pagium",
+    "framework",
+    "mobile",
+    "pc"
+  ],
+  "author": "pagium-team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pagium-team/pagium/issues"
+  },
+  "homepage": "https://github.com/pagium-team/pagium#readme"
+}
