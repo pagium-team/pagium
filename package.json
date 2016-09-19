@@ -1,10 +1,14 @@
 {
   "name": "pagium",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "a kernel for the block system platform",
   "main": "index.js",
   "scripts": {
     "test": "test"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "pagium": "bin/pagium"
   },
   "repository": {
     "type": "git",
@@ -22,6 +26,12 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pagium-team/pagium/issues"
+  },
+  "dependencies": {
+    "child_process": "*"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "homepage": "https://github.com/pagium-team/pagium#readme"
 }
