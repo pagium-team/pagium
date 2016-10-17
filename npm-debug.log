@@ -1,0 +1,118 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\apps\\nodejs\\node.exe',
+1 verbose cli   'D:\\apps\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish',
+1 verbose cli   '.' ]
+2 info using npm@2.15.0
+3 info using node@v4.4.2
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'D:\\workspace\\pagium\\pagium',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory D:\Users\sam.sin\AppData\Roaming\npm-cache\pagium\1.0.0\package.tgz not in flight; packing
+9 verbose correctMkdir D:\Users\sam.sin\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 verbose tar pack [ 'D:\\Users\\sam.sin\\AppData\\Roaming\\npm-cache\\pagium\\1.0.0\\package.tgz',
+10 verbose tar pack   'D:\\workspace\\pagium\\pagium' ]
+11 verbose tarball D:\Users\sam.sin\AppData\Roaming\npm-cache\pagium\1.0.0\package.tgz
+12 verbose folder D:\workspace\pagium\pagium
+13 info prepublish pagium@1.0.0
+14 verbose addLocalTarball adding from inside cache D:\Users\sam.sin\AppData\Roaming\npm-cache\pagium\1.0.0\package.tgz
+15 verbose correctMkdir D:\Users\sam.sin\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+16 silly cache afterAdd pagium@1.0.0
+17 verbose afterAdd D:\Users\sam.sin\AppData\Roaming\npm-cache\pagium\1.0.0\package\package.json not in flight; writing
+18 verbose correctMkdir D:\Users\sam.sin\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+19 verbose afterAdd D:\Users\sam.sin\AppData\Roaming\npm-cache\pagium\1.0.0\package\package.json written
+20 silly publish { name: 'pagium',
+20 silly publish   version: '1.0.0',
+20 silly publish   description: 'a kernel for the block system platform',
+20 silly publish   main: 'index.js',
+20 silly publish   scripts: { test: 'test' },
+20 silly publish   preferGlobal: true,
+20 silly publish   bin: { pagium: 'bin/pagium' },
+20 silly publish   repository:
+20 silly publish    { type: 'git',
+20 silly publish      url: 'git+https://github.com/pagium-team/pagium.git' },
+20 silly publish   keywords: [ 'block', 'nodejs', 'pagium', 'framework', 'mobile', 'pc' ],
+20 silly publish   author: { name: 'pagium-team' },
+20 silly publish   license: 'MIT',
+20 silly publish   bugs: { url: 'https://github.com/pagium-team/pagium/issues' },
+20 silly publish   dependencies:
+20 silly publish    { commander: '^2.9.0',
+20 silly publish      'pagium-command-release': '0.0.2',
+20 silly publish      'pagium-command-init': '0.0.4' },
+20 silly publish   engines: { node: '>=4.0.0' },
+20 silly publish   homepage: 'https://github.com/pagium-team/pagium#readme',
+20 silly publish   readme: '# pagium\r\npagium\r\n',
+20 silly publish   readmeFilename: 'README.md',
+20 silly publish   gitHead: '33f783559bb630aa375d01a8ec6d378397760d86',
+20 silly publish   _id: 'pagium@1.0.0',
+20 silly publish   _shasum: '2bdfa80af2b3db8e58d1f51201817411db77a589',
+20 silly publish   _from: '.' }
+21 verbose getPublishConfig undefined
+22 silly mapToRegistry name pagium
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry http://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: 'pagium',
+25 silly mapToRegistry   scope: null,
+25 silly mapToRegistry   name: 'pagium',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri http://registry.npmjs.org/pagium
+27 verbose publish registryBase http://registry.npmjs.org/
+28 silly publish uploading D:\Users\sam.sin\AppData\Roaming\npm-cache\pagium\1.0.0\package.tgz
+29 verbose request uri http://registry.npmjs.org/pagium
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 14:47:18
+32 verbose request using bearer token for auth
+33 verbose request id dbf33d1db8a22eb1
+34 http request PUT http://registry.npmjs.org/pagium
+35 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.16.162:80
+36 info attempt registry request try #2 at 14:47:49
+37 verbose request using bearer token for auth
+38 http request PUT http://registry.npmjs.org/pagium
+39 http 403 http://registry.npmjs.org/pagium
+40 verbose headers { 'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=300',
+40 verbose headers   'content-length': '95',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   date: 'Mon, 17 Oct 2016 06:48:03 GMT',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-served-by': 'cache-lcy1125-LCY',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1476686870.478168,VS0,VE12637',
+40 verbose headers   vary: 'Accept-Encoding' }
+41 verbose request invalidating D:\Users\sam.sin\AppData\Roaming\npm-cache\registry.npmjs.org\pagium on PUT
+42 error publish Failed PUT 403
+43 verbose stack Error: "You cannot publish over the previously published version 1.0.0." : pagium
+43 verbose stack     at makeError (D:\apps\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+43 verbose stack     at CachingRegistryClient.<anonymous> (D:\apps\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+43 verbose stack     at Request._callback (D:\apps\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+43 verbose stack     at Request.self.callback (D:\apps\nodejs\node_modules\npm\node_modules\request\request.js:199:22)
+43 verbose stack     at emitTwo (events.js:87:13)
+43 verbose stack     at Request.emit (events.js:172:7)
+43 verbose stack     at Request.<anonymous> (D:\apps\nodejs\node_modules\npm\node_modules\request\request.js:1036:10)
+43 verbose stack     at emitOne (events.js:82:20)
+43 verbose stack     at Request.emit (events.js:169:7)
+43 verbose stack     at IncomingMessage.<anonymous> (D:\apps\nodejs\node_modules\npm\node_modules\request\request.js:963:12)
+44 verbose statusCode 403
+45 verbose pkgid pagium
+46 verbose cwd D:\workspace\pagium\pagium
+47 error Windows_NT 6.1.7601
+48 error argv "D:\\apps\\nodejs\\node.exe" "D:\\apps\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "."
+49 error node v4.4.2
+50 error npm  v2.15.0
+51 error code E403
+52 error "You cannot publish over the previously published version 1.0.0." : pagium
+53 error If you need help, you may report this error at:
+53 error     <https://github.com/npm/npm/issues>
+54 verbose exit [ 1, true ]
