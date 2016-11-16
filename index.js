@@ -16,35 +16,43 @@ var projectConfig = require("./package.json");
  * @constructor
  */
 module.exports = {
-	run: function(argv) {
-		program
-			.version(projectConfig.version);
-		 
-		program
-			.command("init")
-			.description("run init commands")
-			.action(function() {
-				initCommand.run();
-			});
+    run: function (argv) {
+        program
+            .version('0.0.1')
+            .option('-i, --init', 'init pagium development environment ')
+            .option('-r, --release', 'packing pagium program ')
+            .option('-w, --watch', 'watching pagium program ');
 
-		program
-			.command("release")
-			.description("run release commands")
-			.action(function() {
-				releaseCommand.run(globalConfig.path);
-			});
 
-		program
-			.command("watch")
-			.description("run server start commands")
-			.action(function() {
-				serverCommand.run(globalConfig.path, function(callback) {
-			        releaseCommand.run(globalConfig.path, {
-			        	callback: callback
-			        });
-			    });
-			});
+        program.on('--help', function () {
+            console.log('  Examples:');
+            console.log('');
+            console.log('    $ pagium --help');
+            console.log('    $ pagium -h');
+            console.log('');
+        });
 
-		program.parse(argv);
-	}
+        program.parse(process.argv);
+
+
+        if (program.init) {
+            console.log('  - init');
+            initCommand.run();
+        }
+        if (program.release) {
+            console.log('  - release');
+            releaseCommand.run(globalConfig.path);
+        }
+        if (program.watch) {
+            console.log('  - watch');
+            serverCommand.run(globalConfig.path, function (callback) {
+                releaseCommand.run(globalConfig.path, {
+                    callback: callback
+                });
+            });
+        }
+
+
+
+    }
 }

@@ -28,9 +28,7 @@
     "url": "https://github.com/pagium-team/pagium/issues"
   },
   "dependencies": {
-    "commander": "^2.9.0",
-    "pagium-command-init": "*",
-    "pagium-command-release": "*"
+    "commander": "^2.9.0"
   },
   "engines": {
     "node": ">=4.0.0"
