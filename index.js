@@ -3,6 +3,9 @@
 var program = require("commander");
 var initCommand = require("pagium-command-init");
 var releaseCommand = require("pagium-command-release");
+var serverCommand = require("pagium-command-server");
+
+var globalConfig = require("./config/global.js");
 var projectConfig = require("./package.json");
 
 /**
@@ -28,7 +31,8 @@ module.exports = {
 			.command("release")
 			.description("run release commands")
 			.action(function() {
-				releaseCommand.run();
+				console.log(process.cwd());
+				releaseCommand.run(globalConfig.path);
 			});
 
 		program.parse(argv);

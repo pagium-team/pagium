@@ -1,6 +1,6 @@
 {
   "name": "pagium",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a kernel for the block system platform",
   "main": "index.js",
   "scripts": {
@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "pagium-command-release": "0.0.2",
-    "pagium-command-init": "0.0.4"
+    "pagium-command-init": "*",
+    "pagium-command-release": "*"
   },
   "engines": {
     "node": ">=4.0.0"
