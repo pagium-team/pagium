@@ -28,6 +28,7 @@
     "url": "https://github.com/pagium-team/pagium/issues"
   },
   "dependencies": {
+    "alphabetjs": "^0.1.3",
     "commander": "^2.9.0",
     "imaging": "^2.1.0"
   },

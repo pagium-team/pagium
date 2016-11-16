@@ -8,20 +8,8 @@ var serverCommand = require("pagium-command-server");
 var globalConfig = require("./config/global.js");
 var projectConfig = require("./package.json");
 var versionStr = require('./version.js');
-var imaging = require('imaging');
+var Alphabet = require('alphabetjs');
 
-function getVersion(){
-    imaging.draw('pagium.jpg', { width: 20}, function (resp, status) {
-        /*
-         if status == 'success', resp is the image charater string.
-         conols.log(resp) to render the image in your terminal
-         else if if status == 'fail', resp is the error message
-         */
-        (status == 'success') && console.log(resp);
-        //console.log(resp);
-    });
-}
-getVersion();
 
 /**
  * pagium 入口文件
@@ -33,7 +21,7 @@ getVersion();
 module.exports = {
     run: function (argv) {
         program
-            .version(versionStr())
+            .version(Alphabet('PAGIUM','stereo')+'\n v0.0.1')
             .option('-i, --init', 'init pagium development environment ')
             .option('-r, --release', 'packing pagium program ')
             .option('-w, --watch', 'watching pagium program ')
