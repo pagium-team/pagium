@@ -28,7 +28,8 @@
     "url": "https://github.com/pagium-team/pagium/issues"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "imaging": "^2.1.0"
   },
   "engines": {
     "node": ">=4.0.0"
