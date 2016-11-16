@@ -31,8 +31,18 @@ module.exports = {
 			.command("release")
 			.description("run release commands")
 			.action(function() {
-				console.log(process.cwd());
 				releaseCommand.run(globalConfig.path);
+			});
+
+		program
+			.command("watch")
+			.description("run server start commands")
+			.action(function() {
+				serverCommand.run(globalConfig.path, function(callback) {
+			        releaseCommand.run(globalConfig.path, {
+			        	callback: callback
+			        });
+			    });
 			});
 
 		program.parse(argv);
