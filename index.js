@@ -21,7 +21,8 @@ module.exports = {
             .version('0.0.1')
             .option('-i, --init', 'init pagium development environment ')
             .option('-r, --release', 'packing pagium program ')
-            .option('-w, --watch', 'watching pagium program ');
+            .option('-w, --watch', 'watching pagium program ')
+            .option('-l, --live', 'Live pagium program ');
 
 
         program.on('--help', function () {
@@ -38,18 +39,23 @@ module.exports = {
         if (program.init) {
             console.log('  - init');
             initCommand.run();
-        }
-        if (program.release) {
-            console.log('  - release');
+        }else if
+         (program.release) {
             releaseCommand.run(globalConfig.path);
+            if (program.live) {
+                console.log("live!");
+            }
         }
-        if (program.watch) {
+        else if (program.watch) {
             console.log('  - watch');
             serverCommand.run(globalConfig.path, function (callback) {
                 releaseCommand.run(globalConfig.path, {
                     callback: callback
                 });
             });
+        }else{
+            console.log("no command!");
+            process.exit(1);
         }
 
 
