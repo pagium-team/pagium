@@ -4,12 +4,11 @@ var program = require("commander");
 var initCommand = require("pagium-command-init");
 var releaseCommand = require("pagium-command-release");
 var serverCommand = require("pagium-command-server");
+var Alphabet = require('alphabetjs');
 
 var globalConfig = require("./config/global.js");
 var projectConfig = require("./package.json");
 var versionStr = require('./version.js');
-var Alphabet = require('alphabetjs');
-
 
 /**
  * pagium 入口文件
@@ -24,8 +23,10 @@ module.exports = {
             .version(Alphabet('PAGIUM','stereo')+'\n v0.0.1')
             .option('-i, --init', 'init pagium development environment ')
             .option('-r, --release', 'packing pagium program ')
-            .option('-w, --watch', 'watching pagium program ')
-            .option('-l, --live', 'Live pagium program ');
+            .option('-o, --optimize', 'pagium program optimize')
+            .option('-s, --server', 'running pagium server ')
+            .option('-w, --watch', 'watch pagium server ')
+            .option('-l, --live', 'live reload pagium program ');
 
 
         program.on('--help', function () {
@@ -38,30 +39,31 @@ module.exports = {
 
         program.parse(process.argv);
 
-
         if (program.init) {
-            console.log('  - init');
             initCommand.run();
-        }else if
-         (program.release) {
-            releaseCommand.run(globalConfig.path);
-            if (program.live) {
-                console.log("live!");
-            }
-        }
-        else if (program.watch) {
-            console.log('  - watch');
-            serverCommand.run(globalConfig.path, function (callback) {
-                releaseCommand.run(globalConfig.path, {
-                    callback: callback
-                });
+        } else if (program.release) {
+            releaseCommand.run(globalConfig.path, {
+                optimize: program.optimize? true : false,
+                callback: function() {
+                    process.exit(1);
+                }
             });
-        }else{
+        } else if (program.server) {
+            var params = {
+                live: program.live? true : false, // for sb
+                watch: program.watch? true : false, // for sb
+                onFileChange: function(callback) {
+                    releaseCommand.run(globalConfig.path, {
+                        live: program.live,
+                        optimize: program.optimize? true : false,
+                        callback: callback
+                    });
+                }
+            };
+            serverCommand.run(globalConfig.path, params);
+        } else {
             console.log("no command!");
             process.exit(1);
         }
-
-
-
     }
 }
