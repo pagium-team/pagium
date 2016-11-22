@@ -5,6 +5,7 @@ var initCommand = require("pagium-command-init");
 var releaseCommand = require("pagium-command-release");
 var serverCommand = require("pagium-command-server");
 var Alphabet = require('alphabetjs');
+var colors = require("colors");
 
 var globalConfig = require("./config/global.js");
 var projectConfig = require("./package.json");
