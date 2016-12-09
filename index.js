@@ -1,7 +1,7 @@
 "use strict";
 
 var program = require("commander");
-var initCommand = require("pagium-command-init");
+var cliCommand = require("pagium-command-cli");
 var releaseCommand = require("pagium-command-release");
 var serverCommand = require("pagium-command-server");
 var Alphabet = require('alphabetjs');
@@ -41,7 +41,7 @@ module.exports = {
         program.parse(process.argv);
 
         if (program.init) {
-            initCommand.run();
+            cliCommand.run();
         } else if (program.release) {
             releaseCommand.run(globalConfig.path, {
                 optimize: program.optimize? true : false,
