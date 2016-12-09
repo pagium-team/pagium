@@ -31,7 +31,10 @@
     "alphabetjs": "^0.1.3",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "imaging": "^2.1.0"
+    "imaging": "^2.1.0",
+    "pagium-command-cli": "*",
+    "pagium-command-release": "*",
+    "pagium-command-server": "*"
   },
   "engines": {
     "node": ">=4.0.0"
