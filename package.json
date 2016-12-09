@@ -1,6 +1,6 @@
 {
   "name": "pagium",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "a kernel for the block system platform",
   "main": "index.js",
   "scripts": {

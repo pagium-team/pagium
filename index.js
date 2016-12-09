@@ -61,7 +61,13 @@ module.exports = {
                     });
                 }
             };
-            serverCommand.run(globalConfig.path, params);
+            releaseCommand.run(globalConfig.path, {
+                optimize: program.optimize? true : false,
+                callback: function() {
+                    serverCommand.run(globalConfig.path, params);
+                }
+            });
+            
         } else {
             console.log("no command!");
             process.exit(1);
